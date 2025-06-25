@@ -1,6 +1,10 @@
 .divMemoria {
-  background-color: aqua;
+  background-image: url('/src/assets/fondoMemori.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(6, 80px);
   gap: var(--var-gap-m);
   justify-content: center;

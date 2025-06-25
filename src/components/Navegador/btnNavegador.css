@@ -1,8 +1,10 @@
 .boton_navegador {
-  width: 125px;
+  width: 130px;
   height: 35px;
   border-radius: 15px;
   border: none;
-  background-color: rgb(126, 238, 238);
+  background-color: rgb(171, 252, 155);
   color: black;
+  font-weight: 600;
+  cursor: pointer;
 }

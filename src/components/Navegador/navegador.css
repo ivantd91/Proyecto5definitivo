@@ -3,6 +3,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: red;
+  border-bottom: 15px;
   height: 10svh;
 }

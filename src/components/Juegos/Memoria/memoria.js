@@ -2,8 +2,9 @@ import './memoria.css'
 import './cartas.css'
 import { imagenesPokemon } from '../../../assets/imagenesCartas.js'
 import { crearCarta } from './crearCarta.js'
+import { mostrarVentanaGanadora } from '../../componentesVisuales/modalGanador.js'
 
-let divPrincipal
+let divPrincipalMemoria
 let cartasSeleccionadas = []
 
 function girarCarta(carta, id) {
@@ -38,14 +39,14 @@ function girarCarta(carta, id) {
     setTimeout(() => {
       const todasAcertadas = document.querySelectorAll('.acertada')
       if (todasAcertadas.length === 18) {
-        import('../../componentesVisuales/modalGanador.js').then((modal) => {
-          modal.mostrarVentanaGanadora(reiniciarMemoria)
+        mostrarVentanaGanadora(() => {
+          reiniciarPartida(divPrincipalMemoria)
         })
       }
     }, 1200)
   }
 }
-export function reiniciarMemoria(contenedor_juego) {
+export function reiniciarPartida(contenedor_juego) {
   contenedor_juego.innerHTML = ''
   cartasSeleccionadas = []
   const baraja = imagenesPokemon()
@@ -56,9 +57,9 @@ export function reiniciarMemoria(contenedor_juego) {
 }
 
 export function juegoMemoria() {
-  divPrincipal = document.createElement('div')
-  divPrincipal.className = 'divMemoria'
+  divPrincipalMemoria = document.createElement('div')
+  divPrincipalMemoria.className = 'divMemoria'
 
-  reiniciarMemoria(divPrincipal)
-  return divPrincipal
+  reiniciarPartida(divPrincipalMemoria)
+  return divPrincipalMemoria
 }

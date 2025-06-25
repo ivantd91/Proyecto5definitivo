@@ -32,3 +32,12 @@
 .btnReiniciar:hover {
   background-color: #f39d3b;
 }
+.modalGanador h2 .jugadorX {
+  color: #e74c3c;
+}
+.modalGanador h2 .jugadorO {
+  color: #3498db;
+}
+.modalGanador h2 .empate {
+  color: gray;
+}

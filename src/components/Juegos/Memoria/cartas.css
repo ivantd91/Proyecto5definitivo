@@ -38,12 +38,27 @@
   transform: rotateY(180deg);
 }
 
+.caraTraseraCarta {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.caraPrincipalCarta {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
 .carta.activa .caraPrincipalCarta {
   transform: rotateY(0deg);
+  z-index: 2;
 }
 
 .carta.activa .caraTraseraCarta {
   transform: rotateY(180deg);
+  z-index: 1;
+}
+.carta {
+  transform-style: preserve-3d;
 }
 
 .carta.acertada .caraPrincipalCarta {

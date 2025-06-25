@@ -9,10 +9,7 @@ export function crearNavegador() {
   btnPortfolio.className = 'boton_navegador'
   btnPortfolio.textContent = ' Visita mi Portfolio'
   btnPortfolio.addEventListener('click', () => {
-    window.open(
-      'https://github.com/ivantd91/Proyecto_4_PortfolioIv-n.git',
-      '_blank'
-    ) //enlace portfolio
+    window.open('https://portfolio-mejorado-swart.vercel.app/') //enlace portfolio
   })
   const btnJuego1 = document.createElement('button')
   btnJuego1.id = 'btnJuego1'

@@ -1,7 +1,9 @@
+import './src/components/contenedorJuegos/contenedorJuegos.css'
 import { crearNavegador } from './src/components/Navegador/navegador.js'
 import { ContenedorJuegos } from './src/components/contenedorJuegos/contenedorJuegos.js'
 import { juegoMemoria } from './src/components/Juegos/Memoria/memoria.js'
 import { juegoTresEnRaya } from './src/components/Juegos/tresEnRaya/tresEnRaya.js'
+
 const app = document.getElementById('app')
 app.innerHTML = ''
 

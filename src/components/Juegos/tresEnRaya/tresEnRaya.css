@@ -3,21 +3,29 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
 }
+
 .infoTresEnRaya {
-  font-size: 1.2rem;
-  margin-bottom: 0, 5 rem;
-  color: orange;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
 .tableroTresEnRaya {
   display: grid;
-  grid-template-columns: repeat(3, 80px);
-  grid-template-rows: repeat(3, 80px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  width: 100%;
 }
 .celdaTresEnRaya {
-  width: 80px;
-  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1/1;
   background: #f3f3f3;
   display: flex;
   align-items: center;
@@ -27,22 +35,14 @@
   border-radius: 8px;
   user-select: none;
 }
+.celdaTresEnRaya .marcador {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
 
-.celdaX {
-  color: #e74c3c;
-}
-.celdaO {
-  color: #3498db;
-}
-@media (max-width: 48px) {
-  .tableroTresEnRaya {
-    grid-template-columns: repeat(3, 60px);
-    grid-template-rows: repeat(3, 60 px);
-    gap: 8px;
-  }
-  .celdaTresEnRaya {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
+.marcador-info {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
 }

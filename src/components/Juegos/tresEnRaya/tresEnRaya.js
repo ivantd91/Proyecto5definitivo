@@ -1,5 +1,8 @@
 import './tresEnRaya.css'
 import { mostrarVentanaGanadora } from '../../componentesVisuales/modalGanador.js'
+import { ContenedorJuegos } from '../../contenedorJuegos/contenedorJuegos.js'
+import xIcono from '../../../assets/x-icono.png'
+import oIcono from '../../../assets/o-icono.png'
 
 export function juegoTresEnRaya() {
   let tablero = [
@@ -11,16 +14,28 @@ export function juegoTresEnRaya() {
 
   let perdida = false
 
+  function actualizarInfo() {
+    info.innerHTML = ''
+  }
   const divPrincipalTresEnRaya = document.createElement('div')
   divPrincipalTresEnRaya.className = 'divTresEnRaya'
 
   const info = document.createElement('div')
   info.className = 'infoTresEnRaya'
-  info.textContent = `turno: ${turno}`
   divPrincipalTresEnRaya.appendChild(info)
+  actualizarInfo()
 
   const grid = document.createElement('div')
   grid.className = 'tableroTresEnRaya'
+
+  function actualizarInfo() {
+    info.innerHTML = ''
+    const imgInfo = document.createElement('img')
+    imgInfo.src = turno === 'X' ? xIcono : oIcono
+    imgInfo.alt = turno
+    imgInfo.classList.add('marcador-info')
+    info.appendChild(imgInfo)
+  }
 
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
@@ -40,35 +55,33 @@ export function juegoTresEnRaya() {
     if (tablero[i][j] || perdida) return
 
     tablero[i][j] = turno
-    celdaEl.textContent = turno
-    celdaEl.classList.add(turno === 'X' ? 'celdaX' : 'celdaO')
+    celdaEl.innerHTML = ''
+    const imagenIcono = document.createElement('img')
+    imagenIcono.src = turno === 'X' ? xIcono : oIcono
+    imagenIcono.alt = turno
+    imagenIcono.classList.add('marcador')
+    celdaEl.appendChild(imagenIcono)
 
     if (comprobarGanador()) {
       perdida = true
-      mostrarVentanaGanadora(() => {
-        const app = document.getElementById('app')
-        const nav = app.firstElementChild
-        app.innerHTML = ''
-        app.appendChild(nav)
-        const nuevo = juegoTresEnRaya()
-        app.appendChild(nuevo)
-      }, `¡<span class="jugador${turno}">${turno}</span> ha ganado 🎉!`)
+      const imgGanador = `<img src="${
+        turno === 'X' ? xIcono : oIcono
+      }" alt="${turno}" class="marcador-info">`
+      mostrarVentanaGanadora(
+        () => ContenedorJuegos(juegoTresEnRaya()),
+        `¡${imgGanador} ha ganado 🎉!`
+      )
       return
     }
     if (tablero.flat().every((c) => c)) {
       perdida = true
       mostrarVentanaGanadora(() => {
-        const app = document.getElementById('app')
-        const nav = app.firstElementChild
-        app.innerHTML = ''
-        app.appendChild(nav)
-        const nuevo = juegoTresEnRaya()
-        app.appendChild(nuevo)
+        ContenedorJuegos(juegoTresEnRaya())
       }, `¡<span class="empate">Empate 😐</span>!`)
       return
     }
     turno = turno === 'X' ? 'O' : 'X'
-    info.textContent = `turno: ${turno}`
+    actualizarInfo()
   }
 
   function comprobarGanador() {

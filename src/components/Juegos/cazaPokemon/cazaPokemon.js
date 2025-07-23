@@ -71,7 +71,7 @@ export function juegoCazaPokemon() {
       }
     }, renovarTiempo)
 
-    poke.addEventListener('click', () => {
+    poke.addEventListener('pointerdown', () => {
       clearTimeout(vida)
       atrapar(poke)
     })

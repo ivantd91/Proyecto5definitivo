@@ -24,7 +24,7 @@ export function crearNavegador() {
   const btnJuego3 = document.createElement('button')
   btnJuego3.id = 'btnJuego3'
   btnJuego3.className = 'boton_navegador'
-  btnJuego3.textContent = 'Juego de Habilidad' //cambiar
+  btnJuego3.textContent = 'Caza Pokémon' //cambiar
 
   const contacto = document.createElement('button')
   contacto.className = 'contacto'

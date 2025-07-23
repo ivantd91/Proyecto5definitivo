@@ -4,7 +4,6 @@ import { imagenesPokemon } from '../../../assets/imagenesCartas.js'
 import { crearCarta } from './crearCarta.js'
 import { mostrarVentanaGanadora } from '../../componentesVisuales/modalGanador.js'
 
-let divPrincipalMemoria
 let cartasSeleccionadas = []
 
 function girarCarta(carta, id) {
@@ -57,7 +56,7 @@ export function reiniciarPartida(contenedor_juego) {
 }
 
 export function juegoMemoria() {
-  divPrincipalMemoria = document.createElement('div')
+  const divPrincipalMemoria = document.createElement('div')
   divPrincipalMemoria.className = 'divMemoria'
 
   reiniciarPartida(divPrincipalMemoria)

@@ -1,0 +1,120 @@
+.caza-container,
+.divCampo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 80vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #add1a9;
+  overflow: hidden;
+}
+
+.contador,
+.record {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  background-color: #fff8dc;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: 2px solid #ffa500;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.campo {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('/src/assets/campo.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #ffd700;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.pokemon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  animation: entradaPokemon 0.4s ease-out;
+  cursor: pointer;
+}
+
+.pokeball {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  animation: aparecer 300ms ease-out;
+}
+
+@keyframes aparecer {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes parpadeo {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes entradaPokemon {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+@keyframes temblorCampo {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-2px, 2px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(2px, -2px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-2px, 2px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(2px, -2px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+.temblando {
+  animation: temblorCampo 0.4s ease-in-out;
+}
+
+@media (max-width: 431px) {
+  .campo {
+    max-width: 90vw;
+    aspect-ratio: 1;
+  }
+  .pokemon {
+    width: 13vw;
+    height: 13vw;
+  }
+  .pokeball {
+    width: 8vw;
+    height: 8vw;
+  }
+}

@@ -6,6 +6,27 @@ import { juegoTresEnRaya } from './src/components/Juegos/tresEnRaya/tresEnRaya.j
 import { juegoCazaPokemon } from './src/components/Juegos/cazaPokemon/cazaPokemon.js'
 import { limpiarJuegoCazaPokemon } from './src/components/Juegos/cazaPokemon/funcionesCapturaPokemon/limpiarJuegoCazaPokemon.js'
 
+// 🔒 Bloquear zoom en iPhone y móviles
+document.addEventListener('gesturestart', (e) => {
+  e.preventDefault()
+})
+document.addEventListener('gesturechange', (e) => {
+  e.preventDefault()
+})
+document.addEventListener('gestureend', (e) => {
+  e.preventDefault()
+})
+
+// Evitar zoom por doble toque rápido
+let lastTouchEnd = 0
+document.addEventListener('touchend', (event) => {
+  const now = new Date().getTime()
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault()
+  }
+  lastTouchEnd = now
+})
+
 const app = document.getElementById('app')
 app.innerHTML = ''
 

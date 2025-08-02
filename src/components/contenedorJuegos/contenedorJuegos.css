@@ -1,8 +1,10 @@
 #contenedor_juego {
-  height: calc(100vh - var(--nav-height) - var(--footer-height));
+  margin: 0;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--gap);
+  padding: var(--var-gap-s);
+  background-color: var(--var-color-background-color);
 }

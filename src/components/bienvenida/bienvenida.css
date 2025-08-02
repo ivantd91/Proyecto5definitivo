@@ -1,0 +1,39 @@
+.bienvenida {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--var-color-background-color);
+  background-image: url('../../assets/fondoPrincipal3.jpg!s1');
+  background-size: cover;
+  background-position: center 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--var-gap-m);
+  padding-top: 1.5rem;
+}
+
+.btn-Bienvenida {
+  width: 80%;
+  max-width: 300px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--var-color-botones);
+  color: var(--var-color-2);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-Bienvenida:hover {
+  transform: scale(1.05);
+}
+.btn-Bienvenida:hover {
+  background-color: var(--var-colorFondoBotones);
+  color: var(--var-color-3);
+  font-weight: 600;
+}

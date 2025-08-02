@@ -14,9 +14,6 @@ export function juegoTresEnRaya() {
 
   let perdida = false
 
-  function actualizarInfo() {
-    info.innerHTML = ''
-  }
   const divPrincipalTresEnRaya = document.createElement('div')
   divPrincipalTresEnRaya.className = 'divTresEnRaya'
 
@@ -69,15 +66,18 @@ export function juegoTresEnRaya() {
       }" alt="${turno}" class="marcador-info">`
       mostrarVentanaGanadora(
         () => ContenedorJuegos(juegoTresEnRaya()),
-        `¡${imgGanador} ha ganado 🎉!`
+        `¡${imgGanador} ha ganado 🎉!`,
+        () => window.location.reload()
       )
       return
     }
     if (tablero.flat().every((c) => c)) {
       perdida = true
-      mostrarVentanaGanadora(() => {
-        ContenedorJuegos(juegoTresEnRaya())
-      }, `¡<span class="empate">Empate 😐</span>!`)
+      mostrarVentanaGanadora(
+        () => ContenedorJuegos(juegoTresEnRaya()),
+        `¡<span class="empate">Empate 😐</span>!`
+      ),
+        () => window.location.reload()
       return
     }
     turno = turno === 'X' ? 'O' : 'X'
@@ -136,3 +136,5 @@ export function juegoTresEnRaya() {
     })
   }
 }
+
+/*REVISAR*/

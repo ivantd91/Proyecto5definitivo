@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: var(--var-padding-s);
   width: 100%;
   max-width: 500px;
   margin: auto;
@@ -11,14 +11,14 @@
 .infoTresEnRaya {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--var-gap-xs);
 }
 
 .tableroTresEnRaya {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 100%;
+  gap: var(--var-gap-xs);
+  width: 80%;
 }
 .celdaTresEnRaya {
   display: flex;
@@ -26,7 +26,7 @@
   justify-content: center;
   width: 100%;
   aspect-ratio: 1/1;
-  background: #f3f3f3;
+  background: var(--var-color-background-color2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,4 +46,5 @@
   width: 70px;
   height: 70px;
   object-fit: contain;
+  margin-bottom: 5px;
 }

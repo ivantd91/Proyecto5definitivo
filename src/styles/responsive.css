@@ -1,0 +1,70 @@
+@media (max-width: 419px) {
+  .boton_navegador {
+    margin: 0.25rem 0;
+    flex: 1 1 100%;
+    font-size: 0.95rem;
+  }
+  .navegador {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 767px) {
+  .campo {
+    margin-top: 10%;
+    max-width: 90vw;
+    aspect-ratio: 1;
+  }
+  .pokemon {
+    width: 13vw;
+    height: 13vw;
+  }
+  .pokeball {
+    width: 8vw;
+    height: 8vw;
+  }
+  .divMemoria {
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+    gap: 6px;
+    height: auto;
+    display: grid;
+  }
+  .boton_navegador {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+  .navegador {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .divMemoria {
+    grid-template-columns: repeat(6, minmax(80px, 1fr));
+  }
+  .boton_navegador {
+    padding: 0.7rem 1.25rem;
+    font-size: 1rem;
+  }
+  .bienvenida {
+    padding-top: 6rem;
+  }
+  .btn-Bienvenida {
+    max-width: 320px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .boton_navegador {
+    padding: 0.85rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 1090px) {
+  .bienvenida {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

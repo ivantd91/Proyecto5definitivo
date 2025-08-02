@@ -1,8 +1,12 @@
 .navegador {
-  width: 80%;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 15px;
-  height: 10svh;
+  padding: 0.5rem 1rem;
+  gap: var(--var-gap-m);
+  z-index: 1001;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
 }

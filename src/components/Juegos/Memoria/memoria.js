@@ -3,6 +3,7 @@ import './cartas.css'
 import { imagenesPokemon } from '../../../assets/imagenesCartas.js'
 import { crearCarta } from './crearCarta.js'
 import { mostrarVentanaGanadora } from '../../componentesVisuales/modalGanador.js'
+import { ContenedorJuegos } from '../../contenedorJuegos/contenedorJuegos.js'
 
 let cartasSeleccionadas = []
 
@@ -38,9 +39,11 @@ function girarCarta(carta, id) {
     setTimeout(() => {
       const todasAcertadas = document.querySelectorAll('.acertada')
       if (todasAcertadas.length === 18) {
-        mostrarVentanaGanadora(() => {
-          reiniciarPartida(divPrincipalMemoria)
-        })
+        mostrarVentanaGanadora(
+          () => ContenedorJuegos(juegoMemoria()),
+          '¡Has Ganado!🎉🎉',
+          () => window.location.reload()
+        )
       }
     }, 1200)
   }

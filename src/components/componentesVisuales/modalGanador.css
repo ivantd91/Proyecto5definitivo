@@ -4,25 +4,30 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--var-color-background-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--var-color-1);
 }
 
 .modalGanador {
-  background: white;
-  padding: 2rem;
+  background: var(--var-color-background-color2);
+  padding: var(--var-padding-m);
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 20px black;
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btnReiniciar {
   margin-top: 15px;
   padding: 0.5rem 1rem;
-  background-color: #ffcc00;
+  background-color: var(--var-colorBotonesModalGanador);
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -30,14 +35,5 @@
 }
 
 .btnReiniciar:hover {
-  background-color: #f39d3b;
-}
-.modalGanador h2 .jugadorX {
-  color: #e74c3c;
-}
-.modalGanador h2 .jugadorO {
-  color: #3498db;
-}
-.modalGanador h2 .empate {
-  color: gray;
+  background-color: var(--var-colorFondoBotones);
 }

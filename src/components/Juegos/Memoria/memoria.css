@@ -1,24 +1,15 @@
 .divMemoria {
   display: grid;
-  gap: var(--gap);
+  gap: var(--var-gap-m);
   grid-template-columns: repeat(6, minmax(80px, 120px));
   justify-content: center;
-  width: 100%;
+  justify-items: center;
+  width: 90vw;
+  max-width: 1500px;
+  height: auto;
+  min-height: 200px;
   background-image: url('../../../assets/fondoMemori.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-@media (max-width: 670px) and (max-width: 1023px) {
-  .divMemoria {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .divMemoria {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 8px;
-  }
 }

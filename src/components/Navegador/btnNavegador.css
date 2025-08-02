@@ -1,10 +1,28 @@
 .boton_navegador {
-  width: 130px;
-  height: 35px;
-  border-radius: 15px;
+  background: var(--var-color-botones);
+  color: var(--var-color-2);
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  min-width: 0;
   border: none;
-  background-color: rgb(171, 252, 155);
-  color: black;
-  font-weight: 600;
+  border-radius: 8px;
+  flex: 1 1 auto;
+  margin: 0.2rem 0.4rem;
+  align-items: center;
+  gap: var(--var-gap-xs);
   cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  transition: transform 0.1s;
+}
+.boton_navegador:hover {
+  background: var(--var-colorFondoBotones);
+  color: var(--var-color-3);
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+
+.boton_navegador:active {
+  transform: translateY(0);
 }

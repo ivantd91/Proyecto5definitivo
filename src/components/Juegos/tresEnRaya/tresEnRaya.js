@@ -3,6 +3,12 @@ import { mostrarVentanaGanadora } from '../../componentesVisuales/modalGanador.j
 import { ContenedorJuegos } from '../../contenedorJuegos/contenedorJuegos.js'
 import xIcono from '../../../assets/x-icono.png'
 import oIcono from '../../../assets/o-icono.png'
+import { volverAInicio } from '../../../volverAInicio/volverAInicio.js'
+import { guardarRecordTresEnRaya } from './guardarRecordTresEnRaya.js'
+import { obtenerRecordTresEnRaya } from './guardarRecordTresEnRaya.js'
+
+let rachaX = 0
+let rachaO = 0
 
 export function juegoTresEnRaya() {
   let tablero = [
@@ -61,23 +67,49 @@ export function juegoTresEnRaya() {
 
     if (comprobarGanador()) {
       perdida = true
+
+      if (turno === 'X') {
+        rachaX++
+        rachaO = 0
+      } else {
+        rachaO++
+        rachaX = 0
+      }
+      const rachaGanador = turno === 'X' ? rachaX : rachaO
+
       const imgGanador = `<img src="${
         turno === 'X' ? xIcono : oIcono
       }" alt="${turno}" class="marcador-info">`
+
+      const nuevoRecord = guardarRecordTresEnRaya(turno, rachaGanador)
+      const recordActual = obtenerRecordTresEnRaya(turno)
+
+      const mensaje = nuevoRecord
+        ? `¡Nuevo récord: ${imgGanador} ${rachaGanador} victorias seguidas!`
+        : `¡${imgGanador} has ganado 🎉! Racha: ${rachaGanador}. Récord: ${recordActual}.`
+
       mostrarVentanaGanadora(
         () => ContenedorJuegos(juegoTresEnRaya()),
-        `¡${imgGanador} ha ganado 🎉!`,
-        () => window.location.reload()
+        mensaje,
+        () => {
+          rachaX = 0
+          rachaO = 0
+          volverAInicio()
+        }
       )
       return
     }
     if (tablero.flat().every((c) => c)) {
       perdida = true
+      rachaX = 0
+      rachaO = 0
+
       mostrarVentanaGanadora(
         () => ContenedorJuegos(juegoTresEnRaya()),
-        `¡<span class="empate">Empate 😐</span>!`
-      ),
-        () => window.location.reload()
+        `¡<span class="empate">Empate 😐</span>!`,
+        () => volverAInicio()
+      )
+
       return
     }
     turno = turno === 'X' ? 'O' : 'X'
@@ -136,5 +168,3 @@ export function juegoTresEnRaya() {
     })
   }
 }
-
-/*REVISAR*/

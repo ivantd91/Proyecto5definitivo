@@ -37,7 +37,7 @@ export function mostrarVentanaGanadora(
     botonSalir.className = 'btnReiniciar'
     botonSalir.addEventListener('click', () => {
       fondo.remove()
-      salir()
+      if (typeof salir === 'function') salir()
     })
     modal.appendChild(botonSalir)
   }

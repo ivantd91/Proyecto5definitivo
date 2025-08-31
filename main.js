@@ -13,8 +13,9 @@ import { bienvenida as crearBienvenida } from './src/components/bienvenida/bienv
 import { juegoMemoria } from './src/components/Juegos/Memoria/memoria.js'
 import { juegoTresEnRaya } from './src/components/Juegos/tresEnRaya/tresEnRaya.js'
 import { juegoCazaPokemon } from './src/components/Juegos/cazaPokemon/cazaPokemon.js'
-import { limpiarJuegoCazaPokemon } from './src/components/Juegos/cazaPokemon/funcionesCapturaPokemon/limpiarJuegoCazaPokemon.js'
 import { mostrarContacto } from './src/components/componentesVisuales/modalContacto.js'
+import { limpiarJuegoCazaPokemon } from './src/components/Juegos/cazaPokemon/funcionesCapturaPokemon/limpiarJuegoCazaPokemon.js'
+import { volverAInicio } from './src/volverAInicio/volverAInicio.js'
 
 const app = document.getElementById('app')
 app.innerHTML = ''
@@ -42,11 +43,10 @@ const nav = document.querySelector('.navegador')
 nav.addEventListener('click', (e) => {
   const id = e.target.id
   if (id === 'btnInicio') {
-    limpiarJuegoCazaPokemon()
-    document.body.appendChild(bienvenida)
-    if (app.contains(contenedorPrincipal)) {
-      app.removeChild(contenedorPrincipal)
-    }
+    try {
+      limpiarJuegoCazaPokemon()
+    } catch {}
+    volverAInicio()
   } else if (id === 'btnContacto') {
     mostrarContacto()
   }

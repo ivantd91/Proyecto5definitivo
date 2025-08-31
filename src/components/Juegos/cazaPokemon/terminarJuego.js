@@ -3,6 +3,7 @@ import { guardarRecordCazaPokemon } from './funcionesCapturaPokemon/guardarRecor
 import { obtenerRecordCazaPokemon } from './funcionesCapturaPokemon/obtenerRecord.js'
 import { ContenedorJuegos } from '../../contenedorJuegos/contenedorJuegos.js'
 import { juegoCazaPokemon } from './cazaPokemon.js'
+import { volverAInicio } from '../../../volverAInicio/volverAInicio.js'
 
 export function terminarJuego(contador) {
   const nuevoRecord = guardarRecordCazaPokemon(contador)
@@ -16,6 +17,6 @@ export function terminarJuego(contador) {
     () => ContenedorJuegos(juegoCazaPokemon()),
     mensaje,
 
-    () => window.location.reload()
+    () => volverAInicio()
   )
 }

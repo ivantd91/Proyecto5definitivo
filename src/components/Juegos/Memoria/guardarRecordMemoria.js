@@ -1,5 +1,5 @@
 export function guardarRecordMemoria(intentos) {
-  const record = 'recodMemoria'
+  const record = 'recordMemoria'
   const actual = parseInt(localStorage.getItem(record)) || Infinity
   if (intentos < actual) {
     localStorage.setItem(record, intentos)
